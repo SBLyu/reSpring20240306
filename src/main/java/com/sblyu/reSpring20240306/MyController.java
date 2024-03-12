@@ -1,19 +1,18 @@
 package com.sblyu.reSpring20240306;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MyController {
 
-    @Autowired
-    private Printer printer;
+    @RequestMapping("/product")
+    public String product(){
+        return "第一個是蘋果、第二個是橘子";
+    }
 
-    @RequestMapping("/test")
-    public String test(){
-        printer.print("Hi");
-        return "Hello~";
+    @RequestMapping("/user")
+    public String user(){
+        return "name is Judy";
     }
 }
