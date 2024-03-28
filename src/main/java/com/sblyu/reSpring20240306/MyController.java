@@ -1,6 +1,7 @@
 package com.sblyu.reSpring20240306;
 
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,10 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MyController {
 
     @RequestMapping("/test")
-    public String test(@RequestBody Student student){
+    public String test(@RequestHeader String info){
+        System.out.println("info: "+info);
 
-        System.out.println("id: "+student.getId());
-        System.out.println("name: "+student.getName());
         return "test OK.";
     }
 
